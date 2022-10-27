@@ -1,10 +1,10 @@
 return {
     --[[ ["language"] = {
-        enabled = true,
+        enabled = bool,
         ["keyword"] = {
-            enabled = true,
-            conceal = "rEq",
-            hg      = "TSNote"
+            enabled     = bool,
+            conceal     = string,
+            highlight   = string
         }
     } ]]
 }
