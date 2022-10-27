@@ -29,5 +29,11 @@ end
 
 --- generates the treesitter files
 M.generate_conceals = function()
+    -- checks cache for last state
+    -- loops through templates
+    -- formats given keywords
+    -- write to scm file
+    -- write states to cache file so no regenerating for the same thing
 end
+
 return M
