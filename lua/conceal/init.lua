@@ -37,7 +37,7 @@ end
 
 --- generates the treesitter files
 M.generate_conceals = function()
-    -- checks cache for last state
+    -- reads cached states
     -- loops through templates
     -- formats given keywords
     -- write to scm file
