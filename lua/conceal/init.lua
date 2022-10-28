@@ -10,6 +10,14 @@ local M = {}
 local _default = vim.o.conceallevel
 local config = require("conceal.config")
 
+--- reads the cached states of the keywords
+local _read_cached_states = function ()
+end
+
+--- write the currently generated states to the cache
+local _write_cached_states = function ()
+end
+
 --- Sets up the wanted languages
 ---@param opts table user specific values
 M.setup = function(opts)
