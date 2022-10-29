@@ -76,11 +76,25 @@ end
 
 --- generates the treesitter files
 M.generate_conceals = function()
-    -- reads cached states
-    -- loops through templates
-    -- formats given keywords
-    -- write to scm file
-    -- write states to cache file so no regenerating for the same thing
+    local template_require = nil
+    local file_content = nil
+    local template = nil
+
+    for language, keywords in pairs(config) do
+        if keywords.enabled then
+            template_require = "conceal.templates." .. language
+            template = safe_require(template_require)
+            if template then
+                file_content = {}
+                for keyword, options in pairs(keywords.keywords) do
+                    if options.enabled then
+                        table.insert(file_content, template[keyword](options))
+                    end
+                end
+                write_to_file(language, file_content)
+            end
+        end
+    end
 end
 
 return M
