@@ -14,10 +14,10 @@ A Neovim Plugin which uses Tree-sitter to conceal typical boiler Code
 <table>
   <tr>
     <td>
-      ![Demo Concealed](https://user-images.githubusercontent.com/29977579/198855339-dead15ef-e9cb-482c-a436-165e33016da4.png)
+      <img src="https://user-images.githubusercontent.com/29977579/198855339-dead15ef-e9cb-482c-a436-165e33016da4.png" \>
     </td>
     <td>
-      ![Demo non Concealed](https://user-images.githubusercontent.com/29977579/198855340-0c953c6a-45db-4ff6-bb4b-49a8bb0b9a35.png)
+      <img src="https://user-images.githubusercontent.com/29977579/198855340-0c953c6a-45db-4ff6-bb4b-49a8bb0b9a35.png" \>
     </td>
   </tr>
 </table>
