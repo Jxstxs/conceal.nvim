@@ -4,14 +4,31 @@ A Neovim Plugin which uses Tree-sitter to conceal typical boiler Code
 
 ## TL;DR
 
-* Conceals Boiler Code
+* Conceals Boiler Code with Tree-sitter
 * Keywords can be disabled (all Keywords are enabled by default)
 * Conceal Chars can be defined (defaults are given)
 * Highlight group can be defined (uses the default groups)
 
-<!-- ## Demo -->
+## Demo
 
-<!-- ![Demo](./demo-keystack.gif) -->
+<table>
+  <tr>
+    <td>
+      ![Demo Concealed](https://user-images.githubusercontent.com/29977579/198855339-dead15ef-e9cb-482c-a436-165e33016da4.png)
+    </td>
+    <td>
+      ![Demo non Concealed](https://user-images.githubusercontent.com/29977579/198855340-0c953c6a-45db-4ff6-bb4b-49a8bb0b9a35.png)
+    </td>
+  </tr>
+</table>
+
+## Installation
+
+Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
+
+```lua
+use { "Jxstxs/conceal.nvim" }
+```
 
 ## Usage/Examples
 
@@ -45,6 +62,7 @@ conceal.setup({
 })
 
 -- generate the scm queries
+-- only need to be run when the Configuration changes
 conceal.generate_conceals()
 
 -- bind a <leader>tc to toggle the concealing level
@@ -56,23 +74,9 @@ end, { silent = true})
 ## Features
 
 - Conceal Boilerplate Code with a given Highlight group and conceal char
-
-<!-- ## Documentation -->
-
-<!-- Type `:help conceal` in Neovim -->
-
-## Installation
-
-Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
-
-```lua
-use { "Jxstxs/conceal.nvim" }
-```
+- Function to toggle the Concealing Level
 
 <!-- ## Changelog -->
-
-<!-- * to configure your mappings you can now also use `require("keystack").setup({...})` -->
-<!-- * you can define function which will get executed when pushing or popping the keys from the stack -->
 
 ## Contributing
 
