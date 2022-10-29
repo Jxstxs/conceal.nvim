@@ -9,23 +9,6 @@ local M = {}
 
 local _default = vim.o.conceallevel
 local config = require("conceal.config")
-
-local _str_to_bool = {
-    ["true"] = function() return true end,
-    ["false"] = function() return false end,
-}
-
---- splits a given string by given string
----@param inp string the string to be split
----@param sep string the seperator
----@return table the splitted line
-local split_by = function(inp, sep)
-    if sep == nil then
-        sep = "%s"
-    end
-    local t = {}
-    for str in string.gmatch(inp, "([^" .. sep .. "]+)") do
-        table.insert(t, str)
     end
     return t
 end
