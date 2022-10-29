@@ -27,8 +27,13 @@ A Neovim Plugin which uses Tree-sitter to conceal typical boiler Code
 Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use { "Jxstxs/conceal.nvim" }
+use { "Jxstxs/conceal.nvim", requires = "nvim-treesitter/nvim-treesitter" }
 ```
+
+### Requirements
+
+* Neovim Nightly (v0.9.0-dev-124-gbd7ca10fd, the Version i Use)
+* nvim-treesitter
 
 ## Usage/Examples
 
