@@ -16,6 +16,17 @@ end
 
 --- write the currently generated states to the cache
 local _write_cached_states = function ()
+
+--- safely requires a template
+---@param module string the template to require
+---@return table|nil the given templates
+local safe_require = function(module)
+    local status, mod = pcall(require, module)
+    if status then
+        return mod
+    else
+        return nil
+    end
 end
 
 --- Sets up the wanted languages
