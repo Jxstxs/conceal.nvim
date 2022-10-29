@@ -7,11 +7,18 @@ end
 
 local M = {}
 
-local _default = vim.o.conceallevel
-local config = require("conceal.config")
+--- checks the currently used conceallevel
+---@return integer the conceallevel
+local check_conceal_level = function()
+    local cl = vim.o.conceallevel
+    if cl > 2 then
+        vim.notify("[conceal] Use level 1 or 2 to properly work", vim.log.levels.WARN)
     end
-    return t
+    return cl
 end
+
+local _default = check_conceal_level()
+local config = require("conceal.config")
 
 --- safely requires a template
 ---@param module string the template to require
