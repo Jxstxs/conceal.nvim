@@ -10,6 +10,26 @@ local M = {}
 local _default = vim.o.conceallevel
 local config = require("conceal.config")
 
+local _str_to_bool = {
+    ["true"] = function() return true end,
+    ["false"] = function() return false end,
+}
+
+--- splits a given string by given string
+---@param inp string the string to be split
+---@param sep string the seperator
+---@return table the splitted line
+local split_by = function(inp, sep)
+    if sep == nil then
+        sep = "%s"
+    end
+    local t = {}
+    for str in string.gmatch(inp, "([^" .. sep .. "]+)") do
+        table.insert(t, str)
+    end
+    return t
+end
+
 --- reads the cached states of the keywords
 local _read_cached_states = function ()
 end
@@ -26,6 +46,21 @@ local safe_require = function(module)
         return mod
     else
         return nil
+    end
+end
+
+--- writes the generated querries to a scm file
+---@param language string the language name
+---@param content table the generated querries
+local write_to_file = function(language, content)
+    local file_path = vim.fn.stdpath("config") .. "/after/queries/" .. language .. "/highlights.scm"
+    local file = io.open(file_path, "w")
+    if file ~= nil then
+        file:write(";; extends \n\n")
+        for _, query in pairs(content) do
+            file:write(query, "\n")
+        end
+        file:close()
     end
 end
 
