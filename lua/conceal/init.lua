@@ -37,7 +37,7 @@ end
 ---@param content table the generated querries
 local write_to_file = function(language, content)
     local dir = vim.fn.stdpath("config") .. "/after/queries/" .. language
-    if not vim.fn.isdirectory(dir) then vim.fn.mkdir(dir, "p", 0o700) end
+    if not vim.fn.isdirectory(dir) then vim.fn.mkdir(dir, "p", 0o755) end
     local file_path = dir .. "/highlights.scm"
     local file = io.open(file_path, "w+")
     if file ~= nil then
