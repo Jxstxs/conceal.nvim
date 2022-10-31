@@ -82,6 +82,8 @@ M.generate_conceals = function()
                     end
                 end
                 write_to_file(language, file_content)
+            else
+                vim.notify("[conceal] Could not find the templates for " .. language, vim.log.levels.WARN)
             end
         end
     end
