@@ -77,5 +77,20 @@ return {
                 highlight = "keyword"
             },
         }
+    },
+    ["c"] = {
+        enabled = true,
+        keywords = {
+            ["char_datatype"] = {
+                enabled = true,
+                conceal = "c",
+                highlight = "type"
+            },
+            ["const"] = {
+                enabled = true,
+                conceal = "C",
+                highlight = "keyword"
+            }
+        }
     }
 }
