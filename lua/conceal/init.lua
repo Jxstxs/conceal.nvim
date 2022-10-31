@@ -36,8 +36,10 @@ end
 ---@param language string the language name
 ---@param content table the generated querries
 local write_to_file = function(language, content)
-    local file_path = vim.fn.stdpath("config") .. "/after/queries/" .. language .. "/highlights.scm"
-    local file = io.open(file_path, "w")
+    local dir = vim.fn.stdpath("config") .. "/after/queries/" .. language
+    if not vim.fn.isdirectory(dir) then vim.fn.mkdir(dir, "p", 0o700) end
+    local file_path = dir .. "/highlights.scm"
+    local file = io.open(file_path, "w+")
     if file ~= nil then
         file:write(";; extends \n\n")
         for _, query in pairs(content) do
