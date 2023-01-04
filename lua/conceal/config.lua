@@ -1,3 +1,5 @@
+local language_defaults = require("conceal.language_defaults")
+
 return {
     --[[ ["language"] = {
         enabled = bool,
@@ -92,5 +94,10 @@ return {
                 highlight = "keyword"
             }
         }
-    }
+    },
+
+    ["python"] = {
+        enabled = true,
+        keywords = language_defaults.python,
+    },
 }
