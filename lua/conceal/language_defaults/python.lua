@@ -51,7 +51,7 @@ return {
     },
     ["continue"] = {
         enabled = true,
-        conceal = "R",
+        conceal = "C",
         highlight = "keyword"
     },
     ["return"] = {
