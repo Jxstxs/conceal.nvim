@@ -44,21 +44,26 @@ local conceal = require("conceal")
 conceal.setup({
     --[[ ["language"] = {
         enabled = bool,
-        ["keyword"] = {
-            enabled     = bool,
-            conceal     = string,
-            highlight   = string
+        keywords = {
+          ["keyword"] = {
+              enabled     = bool,
+              conceal     = string,
+              highlight   = string
+          }
         }
     } ]]
     ["lua"] = {
-      ["local"] = {
-        enabled = false -- to disable concealing for "local"
-      },
-      ["return"] = {
-        conceal = "R" -- to set the concealing to "R"
-      },
-      ["for"] = {
-        highlight = "keyword" -- to set the Highlight group to "@keyword"
+      enabled = true,
+      keywords = {
+        ["local"] = {
+          enabled = false -- to disable concealing for "local"
+        },
+        ["return"] = {
+          conceal = "R" -- to set the concealing to "R"
+        },
+        ["for"] = {
+          highlight = "keyword" -- to set the Highlight group to "@keyword"
+        }
       }
     },
     ["language"] = {
